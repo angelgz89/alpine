@@ -14,8 +14,9 @@ apk add sudo shadow
 echo 'angel ALL=(ALL) ALL' | sudo tee -a /etc/sudoers
 
 apk add htop sudo git nano wget openssh-sftp-server sshpass python3 samba py3-pip chromium chromium-chromedriver
-pip3 install selenium 
-sudo touch $HOME/.hushlogin
+pip3 install selenium
+
+su angel
 
 ####### SAMBA #######
 mkdir ~/Compartida
@@ -29,7 +30,7 @@ sudo smbpasswd -a angel
 sudo rc-update add samba
 sudo rc-service samba restart
 
-su angel
+sudo touch $HOME/.hushlogin
 
 ####### ZSH #######
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
