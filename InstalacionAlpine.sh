@@ -45,6 +45,7 @@ browseable = yes
 writeable = yes
 path = /home/angel/Compartida' | sudo tee -a /etc/samba/smb.conf
 
+sudo smbpasswd -a angel
 sudo rc-update add samba
-sudo rc-service samba start
+sudo rc-service samba restart
 
