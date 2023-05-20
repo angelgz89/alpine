@@ -17,6 +17,17 @@ apk add htop sudo git curl zsh wget openssh-sftp-server sshpass python3 samba py
 pip3 install -U selenium
 sudo touch $HOME/.hushlogin
 
+####### SAMBA #######
+mkdir ~/Compartida
+chmod 0777 ~/Compartida
+echo '[Compartida]
+browseable = yes
+writeable = yes
+path = /home/angel/Compartida' | sudo tee -a /etc/samba/smb.conf
+
+sudo smbpasswd -a angel
+sudo rc-update add samba
+sudo rc-service samba restart
 
 ####### ZSH #######
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -37,15 +48,5 @@ zsh -l
 chsh -s $(which zsh)
 
 
-####### SAMBA #######
-mkdir ~/Compartida
-chmod 0777 ~/Compartida
-echo '[Compartida]
-browseable = yes
-writeable = yes
-path = /home/angel/Compartida' | sudo tee -a /etc/samba/smb.conf
 
-sudo smbpasswd -a angel
-sudo rc-update add samba
-sudo rc-service samba restart
 
