@@ -29,6 +29,8 @@ sudo smbpasswd -a angel
 sudo rc-update add samba
 sudo rc-service samba restart
 
+su angel
+
 ####### ZSH #######
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
