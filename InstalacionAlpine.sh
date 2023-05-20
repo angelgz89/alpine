@@ -19,7 +19,7 @@ sudo touch $HOME/.hushlogin
 
 
 ####### ZSH #######
-sh -c "$(curl -fsSL [https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo git clone [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 sudo git clone [https://github.com/zsh-users/zsh-syntax-highlighting.git](https://github.com/zsh-users/zsh-syntax-highlighting.git) ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 echo "" > ~/.zshrc
@@ -37,7 +37,7 @@ zsh -l
 chsh -s $(which zsh)
 
 
-####### ZSH #######
+####### SAMBA #######
 mkdir ~/Compartida
 chmod 0777 ~/Compartida
 echo '[Compartida]
