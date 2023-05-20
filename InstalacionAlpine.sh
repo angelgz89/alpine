@@ -13,8 +13,8 @@ apk upgrade
 apk add sudo shadow
 echo 'angel ALL=(ALL) ALL' | sudo tee -a /etc/sudoers
 
-apk add htop sudo git curl zsh wget openssh-sftp-server sshpass python3 samba py3-pip chromium chromium-chromedriver
-pip3 install -U selenium
+apk add htop sudo git nano wget openssh-sftp-server sshpass python3 samba py3-pip chromium chromium-chromedriver
+pip3 install selenium
 sudo touch $HOME/.hushlogin
 
 ####### SAMBA #######
@@ -32,7 +32,7 @@ sudo rc-service samba restart
 su angel
 
 ####### ZSH #######
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 echo "" > ~/.zshrc
@@ -46,9 +46,12 @@ zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh' > .zshrc
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 chsh -s $(which zsh)
+
+cp ~/.zsh_history ~/.zsh_history_backup
+rm ~/.zsh_history
+touch ~/.zsh_history
+exec zsh
 
 
 
