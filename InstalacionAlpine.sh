@@ -16,10 +16,8 @@ echo 'angel ALL=(ALL) ALL' | sudo tee -a /etc/sudoers
 apk add htop sudo git nano wget openssh-sftp-server sshpass python3 samba py3-pip chromium chromium-chromedriver
 pip3 install selenium
 
-su angel
-
 ####### SAMBA #######
-mkdir ~/Compartida
+su -c "mkdir ~/Compartida" angel
 chmod 777 ~/Compartida
 echo '[Compartida]
 browseable = yes
@@ -30,7 +28,7 @@ sudo smbpasswd -a angel
 sudo rc-update add samba
 sudo rc-service samba restart
 
-sudo touch $HOME/.hushlogin
+su -c "touch $HOME/.hushlogin" angel
 
 ####### ZSH #######
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
