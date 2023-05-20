@@ -6,6 +6,8 @@ echo 'angel ALL=(ALL) ALL' | sudo tee -a /etc/sudoers
 
 ####### PRIMERA CONFIGURACION #######
 echo "" > ~/repositories
+echo "http://dl-cdn.alpinelinux.org/alpine/v3.18/main" >> ~/repositories
+echo "http://dl-cdn.alpinelinux.org/alpine/v3.18/community" >> ~/repositories
 echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> ~/repositories
 echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> ~/repositories
 sudo mv ~/repositories /etc/apk/repositories
