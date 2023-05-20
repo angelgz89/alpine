@@ -19,7 +19,7 @@ sudo touch $HOME/.hushlogin
 
 ####### SAMBA #######
 mkdir ~/Compartida
-chmod 0777 ~/Compartida
+chmod 777 ~/Compartida
 echo '[Compartida]
 browseable = yes
 writeable = yes
