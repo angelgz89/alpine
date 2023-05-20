@@ -1,8 +1,4 @@
-#!/bin/bash
-
-apk add sudo shadow
-echo 'angel ALL=(ALL) ALL' | sudo tee -a /etc/sudoers
-
+#!/bin/ash
 
 ####### PRIMERA CONFIGURACION #######
 echo "" > ~/repositories
@@ -10,9 +6,12 @@ echo "http://dl-cdn.alpinelinux.org/alpine/v3.18/main" >> ~/repositories
 echo "http://dl-cdn.alpinelinux.org/alpine/v3.18/community" >> ~/repositories
 echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> ~/repositories
 echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> ~/repositories
-sudo mv ~/repositories /etc/apk/repositories
-sudo apk update
-sudo apk upgrade
+mv ~/repositories /etc/apk/repositories
+apk update
+apk upgrade
+
+apk add sudo shadow
+echo 'angel ALL=(ALL) ALL' | sudo tee -a /etc/sudoers
 
 apk add htop sudo git curl zsh wget openssh-sftp-server sshpass python3 samba py3-pip chromium chromium-chromedriver
 pip3 install -U selenium
