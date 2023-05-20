@@ -20,8 +20,8 @@ sudo touch $HOME/.hushlogin
 
 ####### ZSH #######
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo git clone [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-sudo git clone [https://github.com/zsh-users/zsh-syntax-highlighting.git](https://github.com/zsh-users/zsh-syntax-highlighting.git) ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 echo "" > ~/.zshrc
         
 echo '
@@ -45,5 +45,6 @@ browseable = yes
 writeable = yes
 path = /home/angel/Compartida' | sudo tee -a /etc/samba/smb.conf
 
-chsh angel
+sudo rc-update add samba
+sudo rc-service samba start
 
